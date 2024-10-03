@@ -1,0 +1,115 @@
+/* 폰트: 프리텐다드 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+  background: #ffffff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px; /* 탑 바의 높이 */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* 탑 바가 항상 위에 표시되도록 설정 */
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 30px;
+}
+
+.logo .menu-icon {
+  color: #333;
+  font-size: 30px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.logo .logo-name {
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+nav .sidebar {
+  position: fixed;
+  top: 70px; /* 탑 바의 높이만큼 아래로 이동 */
+  left: 0;
+  height: calc(100% - 70px); /* 전체 높이에서 탑 바의 높이를 뺀 값 */
+  width: 260px;
+  padding: 20px 0;
+  background-color: #fff;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.sidebar .sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+
+.sidebar-content .list {
+  list-style: none;
+}
+
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.lists .nav-link:hover {
+  background-color: #4070f4;
+}
+
+.nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+  color: #707070;
+}
+
+.nav-link .link {
+  font-size: 16px;
+  color: #707070;
+  font-weight: 400;
+}
+
+.nav-link.active {
+  background-color: #4070f4; /* 배경색 */
+}
+
+.nav-link.active .link {
+  color: #fff !important; /* 링크 텍스트 색상 흰색 */
+}
+
+.nav-link.active .icon {
+  color: #fff !important; /* 아이콘 색상도 흰색 */
+}
+
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+  color: #fff;
+}

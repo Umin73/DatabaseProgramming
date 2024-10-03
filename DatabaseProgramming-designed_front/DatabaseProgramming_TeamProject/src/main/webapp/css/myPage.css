@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    color: #333;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 5px;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+.profile {
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.profile-box {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    background-color: #F0F0F0; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 50px;
+}
+
+.profile-img, .profile-contents {
+    transform: translateX(-200px);
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+}
+
+.profile-box div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name, .phone, .email {
+    margin-bottom: 10px;
+}
+
+.active-study {
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+.study-box {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 15px;
+}
+
+.study-item {
+    height: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid #707070; 
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+    display: flex;
+    align-items: flex-start;
+}
+
+.study-category {
+    background-color: #B0E0E6; /* 더 옅은 하늘색 배경 */
+    color: #333; /* 텍스트 색상 #333 */
+    border-radius: 12px; /* 둥근 모서리 */
+    padding: 5px 10px; /* 패딩 추가 */
+    margin-bottom: 10px; /* 아래쪽 여백 추가 */
+    align-self: flex-start; /* 텍스트를 상단에 정렬 */
+}
+
+.study-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 상단 정렬 */
+    margin-left: 15px;
+    flex-grow: 1; /* 남은 공간 차지 */
+}
+
+.study-image {
+    width: 240px;
+    height: 240px;
+    border-radius: 4px; 
+}
+
+.study-item:hover {
+    background-color: #4070f4;
+    color: white; 
+    border: none; 
+}
+
+.study-info {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details {
+    margin: 0; /* 상하 여백 제거 */
+}
+
+/* participants 스타일 수정 */
+.participants {
+	position: relative;
+    margin-top: 100px; /* 위쪽으로 여백 추가 */
+}

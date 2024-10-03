@@ -1,0 +1,145 @@
+@charset "UTF-8";
+body{
+	margin-left: 5%;
+	
+}
+.main-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.main-ad {
+	width: 90%;
+	margin-bottom: 50px;
+}
+
+.ad-img {
+	width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.study-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.study-container .active-study {
+    width: 50%;
+}
+
+.study-container .new-study {
+    width: 50%;
+
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.active-study .study-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-right: 15px;
+    float: left;
+    
+    
+}
+.active-study .study-item {
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 35px;
+    border-radius: 8px;
+    background-color: #f0f0fa;
+    height: 120px; /* 필요에 따라 높이 조정 */
+    
+}
+
+.active-study .study-item {
+    flex: 1;
+    width: 400px;
+    height: 600px;
+    
+}
+
+.new-study .study-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 30px;		
+}
+
+.new-study .study-item {
+    display: flex; /* 플렉스 박스 사용 */
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 35px;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 120px; /* 필요에 따라 높이 조정 */
+    
+}
+.study-image {
+    width: 120px; /* 정사각형 이미지 너비 */
+    height: 120px; /* 정사각형 이미지 높이 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    margin-right: 5px; /* 이미지와 텍스트 간의 간격 */
+}
+.study-info {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    
+}
+.description {
+	    font-size: 14px;
+	
+	height:100px;
+	display: column;
+	padding: 10px;
+        border-radius: 8px; /* 모서리 둥글게 */
+    
+}
+.tasks, .quiz{
+	color:#333;
+	
+	padding: 5px;
+	padding-right: 150px;
+    margin-top: 25px;
+    font-size: 18px;
+    z-index:100;
+        background-color: #fff;
+    
+}
+
+.details {
+	color:#333;
+	padding: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    z-index:100;
+}
+.taskset{
+
+	margin: 10px;
+	margin-bottom: 200px;
+}
+
+.active-description{
+		    font-size: 14px;
+	
+	height:100px;
+	display: column;
+	padding: 10px;
+        border-radius: 8px; /* 모서리 둥글게 */
+        margin-left: -200px;
+        margin-bottom: 400px;
+}
+.void {
+    padding: 40px;
+}

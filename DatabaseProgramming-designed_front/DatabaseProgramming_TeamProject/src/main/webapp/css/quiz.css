@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+body {
+    font-family: Arial, sans-serif;
+    margin-left: 5%;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #4070f4; /* 파란 배경 */
+    padding: 20px;
+    border-radius: 10px; /* 모서리 둥글게 */
+}
+
+.top-bar a {
+    color: #fff; /* 흰 글씨 */
+    text-decoration: none; /* 밑줄 제거 */
+    font-weight: bold; /* 굵은 글씨 */
+}
+
+.quiz-main {
+    margin: 20px;
+}
+
+.quiz-round-dropdown {
+    margin: 10px 0;
+    float: left; /* 왼쪽으로 위치 */
+}
+
+.create-quiz-button {
+    margin: 10px 0;
+    float: right; /* 오른쪽으로 위치 */
+}
+
+.quiz-list-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px; /* 모서리 둥글게 */
+    background-color: #f0f0fa; /* 회색 배경 */
+    
+    color: #333; /* 검정 글씨 */
+    }
+
+.quiz-header,
+.quiz-item {
+    display: flex; /* 플렉스 박스 사용 */
+    width: 100%; /* 전체 너비 사용 */
+    border-radius: 10px; /* 모서리 둥글게 */
+        color: #333; /* 검정 글씨 */
+    
+}
+
+.quiz-header > div,
+.quiz-item > div {
+    width: 15%; /* 각 셀의 너비를 100px로 설정 */
+    padding: 15px; /* 패딩 추가 */
+    text-align: center; /* 가운데 정렬 */
+    
+}
+
+.quiz-header {
+    background-color: #fff; /* 헤더 배경색 */
+    font-weight: bold; /* 굵은 글씨 */
+}
+
+.quiz-item {
+    background-color: #fff; /* 아이템 배경색 */
+    margin-top: 10px; /* 헤더와 아이템 간격 설정 */
+    
+}
+
+.round-label {
+    font-size: 18px; /* 글씨 크기를 키움 */
+    font-weight: bold; /* 굵은 글씨 */
+    color: #333; /* 검정 글씨 */
+}
+
+.create-quiz-button img {
+    width: 100px; /* 이미지 너비 조정 (필요에 따라 조절) */
+    height: auto; /* 비율에 맞춰 높이 자동 조정 */
+    cursor: pointer; /* 마우스 커서가 손가락 모양으로 변경 */
+}
+
+.void {
+    padding: 40px;
+}
+

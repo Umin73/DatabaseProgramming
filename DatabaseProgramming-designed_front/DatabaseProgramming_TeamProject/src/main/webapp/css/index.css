@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* 폰트: 프리텐다드 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.sidebar {
+    width: 200px;
+    padding-top: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+    user-select: none;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.sidebar ul li a:hover {
+    background-color: #c0c0c0;
+}
+
+.main-content {
+    margin-left: 200px;
+    padding-top: 200px;
+    padding: 20px;
+    flex-grow: 1;
+    z-index: 0;
+}
+.void {
+    padding: 40px;
+}

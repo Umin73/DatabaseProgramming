@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Sidebar Menu</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/sidebarStyle.css" />
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+
+      <div class="sidebar">
+        <div class="logo">
+          <i class=""></i>
+          <span class="logo-name">서비스명</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="Home.jsp" class="nav-link active">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="link">메인화면</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="CreateGroup.jsp" class="nav-link">
+                <i class="bx bx-message-rounded icon"></i>
+                <span class="link">스터디 그룹 만들기</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="FindGroup.jsp" class="nav-link">
+                <i class="bx bx-folder-open icon"></i>
+                <span class="link">스터디 그룹 찾기</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="MyGroup.jsp" class="nav-link">
+                <i class="bx bx-bar-chart-alt-2 icon"></i>
+                <span class="link">참여중인 그룹</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="MyPage.jsp" class="nav-link">
+                <i class="bx bx-heart icon"></i>
+                <span class="link">마이페이지</span>
+              </a>
+            </li>
+            
+  
+          </ul>
+
+          <div class="bottom-cotent">
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-cog icon"></i>
+                <span class="link">설정</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-log-out icon"></i>
+                <span class="link">로그아웃</span>
+              </a>
+            </li>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const currentLocation = window.location.pathname.split('/').pop(); // 현재 파일 이름만 가져오기
+    const menuItems = document.querySelectorAll('.nav-link');
+
+    menuItems.forEach(item => {
+      // href 속성의 파일 이름과 현재 위치를 비교
+      const href = item.getAttribute('href');
+      if (href === currentLocation) {
+        item.classList.add('active');
+      } else {
+        item.classList.remove('active'); // 다른 메뉴 항목에서 active 클래스 제거
+      }
+    });
+  });
+</script>
+
+
+  </body>
+</html>
