@@ -18,8 +18,13 @@ public class Announcement {
 	public String getContent() {
         return content;
     }
+	
+	public void setContent(String content) {
+		this.content = content;
+	}
 
     public Date getDate() {
         return date;
     }
+    
 }
