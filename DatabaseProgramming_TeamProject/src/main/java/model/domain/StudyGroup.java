@@ -1,35 +1,67 @@
 package model.domain;
 
+import java.util.Date;
 import java.util.List;
 
 public class StudyGroup {
-	private Long groupId;
+	private int groupId;
 	private String groupName;
 	private String groupDescription;
 	private String goal;
+	private String category;
 	private int maxMembers;
-	private User leader;
+	private Date startDate;
+	private String leaderId;
+	private String leaderName;
 	private List<GroupMember> members;
-	private List<Schedule> sehedules;
+	private List<Schedule> schedules;
 	private List<Assignment> assignments;
 	private List<Announcement> announcements;
 
+	public StudyGroup() { }
 	
-	public StudyGroup(Long groupId, String groupName, String groupDescription, String goal, int maxMembers, User leader,
-			List<GroupMember> members, List<Schedule> sehedules, List<Assignment> assignments,
-			List<Announcement> announcements) {
-		super();
+	/*
+	public StudyGroup(int groupId, String groupName, String groupDescription, String goal, String category, int maxMembers, 
+	        Date startDate, String leaderId, String leaderName,
+			List<GroupMember> members, List<Schedule> schedules, List<Assignment> assignments, List<Announcement> announcements) {
+	    super();
 		this.groupId = groupId;
 		this.groupName = groupName;
 		this.groupDescription = groupDescription;
 		this.goal = goal;
+		this.category = category;
 		this.maxMembers = maxMembers;
-		this.leader = leader;
+		this.startDate = startDate;
+		this.leaderId = leaderId;
+		this.leaderName = leaderName;
 		this.members = members;
-		this.sehedules = sehedules;
+		this.schedules = schedules;
 		this.assignments = assignments;
 		this.announcements = announcements;
 	}
+	*/
+	
+    public StudyGroup(int groupId, String groupName, String groupDescription, String goal, String category, int maxMembers, 
+            Date startDate, String leaderId, String leaderName) {
+        super();
+        this.groupId = groupId;
+        this.groupName = groupName;
+        this.groupDescription = groupDescription;
+        this.goal = goal;
+        this.category = category;
+        this.maxMembers = maxMembers;
+        this.startDate = startDate;
+        this.leaderId = leaderId;
+        this.leaderName = leaderName;
+    }
+    
+    public StudyGroup(int groupId, String groupName, String groupDescription, String category) {
+        super();
+        this.groupId = groupId;
+        this.groupName = groupName;
+        this.groupDescription = groupDescription;
+        this.category = category;
+    }
 
 	public void createGroup() {
 		
@@ -43,80 +75,109 @@ public class StudyGroup {
 
 	}
 
-	public String getGroupName() {
-		return groupName;
-	}
+    public int getGroupId() {
+        return groupId;
+    }
 
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
-	}
+    public void setGroupId(int groupId) {
+        this.groupId = groupId;
+    }
 
-	public String getGroupDescription() {
-		return groupDescription;
-	}
+    public String getGroupName() {
+        return groupName;
+    }
 
-	public void setGroupDescription(String groupDescription) {
-		this.groupDescription = groupDescription;
-	}
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
 
-	public String getGoal() {
-		return goal;
-	}
+    public String getGroupDescription() {
+        return groupDescription;
+    }
 
-	public void setGoal(String goal) {
-		this.goal = goal;
-	}
+    public void setGroupDescription(String groupDescription) {
+        this.groupDescription = groupDescription;
+    }
 
-	public int getMaxMembers() {
-		return maxMembers;
-	}
+    public String getGoal() {
+        return goal;
+    }
 
-	public void setMaxMembers(int maxMembers) {
-		this.maxMembers = maxMembers;
-	}
+    public void setGoal(String goal) {
+        this.goal = goal;
+    }
 
-	public User getLeader() {
-		return leader;
-	}
+    public String getCategory() {
+        return category;
+    }
 
-	public void setLeader(User leader) {
-		this.leader = leader;
-	}
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
-	public List<GroupMember> getMembers() {
-		return members;
-	}
+    public int getMaxMembers() {
+        return maxMembers;
+    }
 
-	public void setMembers(List<GroupMember> members) {
-		this.members = members;
-	}
+    public void setMaxMembers(int maxMembers) {
+        this.maxMembers = maxMembers;
+    }
 
-	public List<Schedule> getSehedules() {
-		return sehedules;
-	}
+    public Date getStartDate() {
+        return startDate;
+    }
 
-	public void setSehedules(List<Schedule> sehedules) {
-		this.sehedules = sehedules;
-	}
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
 
-	public List<Assignment> getAssignments() {
-		return assignments;
-	}
+    public String getLeaderId() {
+        return leaderId;
+    }
 
-	public void setAssignments(List<Assignment> assignments) {
-		this.assignments = assignments;
-	}
+    public void setLeaderId(String leaderId) {
+        this.leaderId = leaderId;
+    }
 
-	public List<Announcement> getAnnouncements() {
-		return announcements;
-	}
+    public String getLeaderName() {
+        return leaderName;
+    }
 
-	public void setAnnouncements(List<Announcement> announcements) {
-		this.announcements = announcements;
-	}
+    public void setLeaderName(String leaderName) {
+        this.leaderName = leaderName;
+    }
 
-	public Long getGroupId() {
-		return groupId;
-	}
+    public List<GroupMember> getMembers() {
+        return members;
+    }
+
+    public void setMembers(List<GroupMember> members) {
+        this.members = members;
+    }
+
+    public List<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(List<Schedule> schedules) {
+        this.schedules = schedules;
+    }
+
+    public List<Assignment> getAssignments() {
+        return assignments;
+    }
+
+    public void setAssignments(List<Assignment> assignments) {
+        this.assignments = assignments;
+    }
+
+    public List<Announcement> getAnnouncements() {
+        return announcements;
+    }
+
+    public void setAnnouncements(List<Announcement> announcements) {
+        this.announcements = announcements;
+    }
+
     
 }
