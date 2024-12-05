@@ -3,7 +3,7 @@ package model.domain;
 import java.util.List;
 
 public class StudyGroup {
-	private Long groupId;
+	private String groupId;
 	private String groupName;
 	private String groupDescription;
 	private String goal;
@@ -15,7 +15,7 @@ public class StudyGroup {
 	private List<Announcement> announcements;
 
 	
-	public StudyGroup(Long groupId, String groupName, String groupDescription, String goal, int maxMembers, User leader,
+	public StudyGroup(String groupId, String groupName, String groupDescription, String goal, int maxMembers, User leader,
 			List<GroupMember> members, List<Schedule> sehedules, List<Assignment> assignments,
 			List<Announcement> announcements) {
 		super();
@@ -31,6 +31,13 @@ public class StudyGroup {
 		this.announcements = announcements;
 	}
 
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+	public StudyGroup() {
+        
+    }
 	public void createGroup() {
 		
 	}
@@ -115,7 +122,7 @@ public class StudyGroup {
 		this.announcements = announcements;
 	}
 
-	public Long getGroupId() {
+	public String getGroupId() {
 		return groupId;
 	}
     

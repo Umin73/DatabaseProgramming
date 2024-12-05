@@ -38,7 +38,20 @@ public class JDBCUtil {
         this.parameters = parameters;
     }
     */
-    
+    // 데이터베이스 연결 반환
+    public static Connection getConnection() {
+        try {
+            String DB_URL = "jdbc:oracle:thin:@dblab.dongduk.ac.kr:1521/orclpdb"; // 변경 가능한 DB URL
+            String DB_USER = "dbp240102"; // DB 사용자
+            String DB_PASSWORD = "73841"; // DB 비밀번호
+
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            return DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("데이터베이스 연결 실패");
+        }
+    }
     // sql 변수 getter
     public String getSql() {
         return this.sql;
@@ -80,9 +93,9 @@ public class JDBCUtil {
         }
         if (pstmt != null) pstmt.close();
         pstmt = conn.prepareStatement(sql, resultSetType, resultSetConcurrency);
-        // JDBCUtil.printDataSourceStats(ds);
         return pstmt;
     }
+
 
     // JDBCUtil의 쿼리와 매개변수를 이용해  executeQuery를 수행하는 메소드
     public ResultSet executeQuery() {
@@ -170,6 +183,9 @@ public class JDBCUtil {
     }
 
     public void commit() {
+        if (conn == null) {
+            throw new IllegalStateException("Connection is not initialized.");
+        }
         try {
             conn.commit();
         } catch (SQLException ex) {

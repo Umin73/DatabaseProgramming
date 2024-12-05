@@ -38,4 +38,6 @@ public class GroupMember {
             schedule.removeParticipant(user);
         }
     }
+    
+    
 }
