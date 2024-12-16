@@ -1,5 +1,7 @@
 package model.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,7 +17,29 @@ public class UserDAO {
         jdbcUtil = new JDBCUtil();
     }
 
-
+    // 사용자 ID로 사용자 정보 조회
+    public User getUserByUserId(String userId) {
+        String sql = "SELECT USER_ID, PASSWORD, USERNAME, EMAIL, PHONE FROM USERS WHERE USER_ID = ?";
+        try (Connection conn = JDBCUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, userId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    return new User(
+                    	null,
+                        rs.getString("USER_ID"),
+                        rs.getString("PASSWORD"),
+                        rs.getString("USERNAME"),
+                        rs.getString("EMAIL"),
+                        rs.getString("PHONE")
+                    );
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public int createUser(User user) throws SQLException {
         String sql = "INSERT INTO USERINFO (userId, password, username, phone, email) VALUES (?, ?, ?, ?, ?)";
         Object[] param = new Object[] {
@@ -36,23 +60,22 @@ public class UserDAO {
     }
     
     public int updateUser(User user) throws SQLException {
-        String sql = "UPDATE USERINFO SET password = ?, username = ?, phone = ?, email = ? WHERE userId = ?";
-        Object[] param = new Object[] {
-                user.getPassword(), user.getUsername(), user.getPhone(), user.getEmail(), user.getUserId()};
-        jdbcUtil.setSqlAndParameters(sql, param);
-        
-        try {               
-            int result = jdbcUtil.executeUpdate();
+        String sql = "UPDATE USERS SET password = ?, username = ?, phone = ?, email = ? WHERE userId = ?";
+        try (Connection conn = new ConnectionManager().getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            conn.setAutoCommit(false); // 트랜잭션 시작
+            pstmt.setString(1, user.getPassword());
+            pstmt.setString(2, user.getUsername());
+            pstmt.setString(3, user.getPhone());
+            pstmt.setString(4, user.getEmail());
+            pstmt.setString(5, user.getUserId());
+            int result = pstmt.executeUpdate();
+            conn.commit(); // 커밋
             return result;
-        } catch (Exception ex) {
-            jdbcUtil.rollback();
+        } catch (SQLException ex) {
             ex.printStackTrace();
+            throw ex;
         }
-        finally {
-            jdbcUtil.commit();
-            jdbcUtil.close();
-        }       
-        return 0;
     }
     
     public int deleteUser(String userId) throws SQLException {

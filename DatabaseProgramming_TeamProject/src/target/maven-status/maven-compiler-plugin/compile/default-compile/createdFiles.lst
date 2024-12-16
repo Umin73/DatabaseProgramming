@@ -1,0 +1,12 @@
+model\domain\Assignment.class
+model\domain\Question.class
+model\domain\Quiz.class
+model\dao\UserDAO.class
+model\domain\Schedule.class
+model\dao\JDBCUtil.class
+model\domain\GroupMember.class
+model\domain\Announcement.class
+model\domain\User.class
+model\dao\ConnectionManager.class
+model\dao\QuizDAO.class
+model\domain\StudyGroup.class
